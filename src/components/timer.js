@@ -41,7 +41,7 @@ const Timer = () => {
   }, [context]);
 
   if (isLoading) {
-    return <div className="timer">Loading...</div>;
+    return <div className="timer-container">Loading...</div>;
   }
 
   return (
@@ -53,7 +53,7 @@ const Timer = () => {
 
       <div className="timer">
         {/* TODO: Make this a real countdown value */}
-        <div className="countdown">{"23:49"}</div>
+        <div className="countdown">{"2:49"}</div>
 
         <div style={{ textAlign: "center", paddingTop: "1em" }}>
           <button className="button" onClick={timerStartStop}>
