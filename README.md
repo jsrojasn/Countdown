@@ -2,7 +2,7 @@
 
 The objective of this programming exercise is to build a shared countdown timer
 that can be simultaneously experienced by multiple users. An example
-implementation can be found [here](https://countdown.cadencework.com).
+implementation can be found [here](https://cadence-countdown.web.app/).
 
 ## Instructions
 
