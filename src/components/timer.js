@@ -1,7 +1,6 @@
-import AppContext from "../AppContext";
-
 import { useContext, useEffect, useState } from "react";
 
+import AppContext from "../AppContext";
 import config from "../config.json";
 import { dbDocumentListen, dbDocumentSet } from "../lib/firestore";
 
@@ -42,18 +41,29 @@ const Timer = () => {
   }, [context]);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div className="timer">Loading...</div>;
   }
+
   return (
-    <div>
-      <div>This is timer {config.timer.docId}</div>
-      <div>The timer is {isActive ? "active" : "inactive"}</div>
+    <div className="timer-container">
+      <div style={{ fontSize: "0.8em", paddingBottom: "15px" }}>
+        <div>This is timer {config.timer.docId}</div>
+        <div>The timer is {isActive ? "active" : "inactive"}</div>
+      </div>
 
-      {/* TODO: Make this a real countdown value */}
-      <div>{"29:59"}</div>
+      <div className="timer">
+        {/* TODO: Make this a real countdown value */}
+        <div className="countdown">{"23:49"}</div>
 
-      <button onClick={timerStartStop}>{!isActive ? "Start" : "Stop"}</button>
-      <button onClick={timerReset}>Reset</button>
+        <div style={{ textAlign: "center", paddingTop: "1em" }}>
+          <button className="button" onClick={timerStartStop}>
+            {!isActive ? "Start" : "Stop"}
+          </button>
+          <button className="button" onClick={timerReset}>
+            Reset
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

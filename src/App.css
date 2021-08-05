@@ -1,0 +1,39 @@
+.timer-container {
+  text-align: center;
+  padding: 15px;
+}
+
+.timer {
+  border: 1px solid #000000;
+  padding: 15px 30px;
+  display: inline-block;
+}
+
+.countdown {
+  font-family: "Roboto", sans-serif;
+  font-size: 3em;
+  font-weight: 900;
+  color: #000000;
+  text-align: center;
+}
+
+.button {
+  min-width: 6em;
+  display: inline-block;
+  padding: 0.35em 1.2em;
+  border: 0.1em solid #000000;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  color: #000000;
+  background-color: #ffffff;
+  text-align: center;
+  transition: all 0.2s;
+}
+.button:hover {
+  color: #ffffff;
+  background-color: #000000;
+}
