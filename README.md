@@ -1,70 +1,34 @@
-# Getting Started with Create React App
+# Countdown Timer Programming Exercise
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The objective of this programming exercise is to build a shared countdown timer
+that can be simultaneously experienced by multiple users. An example
+implementation can be found [here](https://countdown.cadencework.com).
 
-## Available Scripts
+## Instructions
 
-In the project directory, you can run:
+1. Make a clone of of this repository
+2. Place the `config.json` file we provided you in the `src` directory
+3. In the project root directory, run:
 
-### `npm start`
+```
+npm ci
+npm start
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+4. Open [http://localhost:3000](http://localhost:3000) in multiple browser windows and try pressing the buttons to see how it works.
+5. The code in its current state does not implement the full functionality. You'll need to modify the existing code and write new code in order to make it work as expected
+6. When you're done, upload your repository to Github or another service of your choice and send us a link
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Requirements
 
-### `npm test`
+- Clicking the **Reset** button should reset the timer to `3:00` minutes
+- Clicking the **Start/Stop** button should unpause and pause the timer respectively
+- The timer should count downward, updating every second until it reaches `0:00`
+- Multiple users should be able to visit the site and all simultaneously see the same value
+- Closing or reloading the browser should not impact the timer's behavior. On reload, the site should display the same content as if the page was never closed
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Details
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- The core functionality of the timer is in `src/components/timer.js` but feel free to reorganize the files as you see fit
+- Areas where you should add code are marked with a `TODO` comment
+- Application state is persisted using Google [Firestore](https://firebase.google.com/docs/firestore). Add additional fields to the persisted data object as needed. Calls to the Firestore API are wrapped via functions in `lib/firestore.js` so you don't need to be familiar with Firestore in order to complete the project, but links to documentation are provided in the comments
