@@ -14,7 +14,15 @@ export const dbDocumentSet = async (context, docId, data) => {
 // https://firebase.google.com/docs/firestore/query-data/get-data#get_a_document
 // https://firebase.google.com/docs/reference/node/firebase.firestore.DocumentReference#get
 export const dbDocumentGet = async (context, docId) => {
-  return await context.firestore.collection("timers").doc(docId).get();
+  const doc = await context.firestore.collection("timers").doc(docId).get();
+  if (!doc.exists) {
+    throw Error("Document with id " + docId + " not found");
+  }
+  const data = doc.data();
+  if (!data) {
+    throw Error("Document " + docId + " has no data");
+  }
+  return data;
 };
 
 // Trigger callback whenever data associated with Firestore document docId changes

@@ -32,10 +32,12 @@ const Timer = () => {
       (data) => {
         setIsActive(data.isActive);
         setIsLoading(false);
+        // TODO: Add additional code here to react to changes in data fields
       }
     );
 
     return () => {
+      // Unsubscribe to listener on cleanup
       unsubscribe();
     };
   }, [context]);
